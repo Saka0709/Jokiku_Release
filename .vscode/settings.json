@@ -1,0 +1,5 @@
+{
+    "mobile-preview.url": "http://localhost:5500/",
+    "livePreview.debugOnExternalPreview": false,
+    "mobile-preview.device": "iPhone 13 Pro"
+}

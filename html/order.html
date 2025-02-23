@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/order.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="icon" type="image/jpg" href="../assets/logojokiku.jpg">
+    <title>Order - Jokiku</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../assets/logojokiku2.png" target="_blank">Jokiku
+        </div>
+            <nav class="nav-links" id="nav-links">
+                <a href="Index.html" class="active">Beranda</a>
+                <a href="index.html#about">Tentang Kami</a>
+                <a href="index.html#service">Layanan Kami</a>
+                <a href="index.html#contact">Kontak</a>
+                <div class="theme-switcher" id="theme-toggler">
+                    <i class="bx bx-sun"></i>
+                </div>
+              </nav>
+              
+                <button id="menuButton">
+                  <i class='bx bx-menu'></i>
+              </button>
+          </header>
+        
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+            const menuButton = document.getElementById("menuButton");
+            const nav = document.querySelector(".nav-links");
+            const logo = document.querySelector(".logo");
+        
+            if (menuButton && nav && logo) {
+              menuButton.addEventListener("click", function () {
+                nav.classList.toggle("open"); // Toggle menu
+                logo.classList.toggle("hidden"); // Toggle logo (hilang/muncul)
+              });
+            }
+          });
+          </script>
+
+    <h1>Daftar Penjoki</h1>
+    <div id="contactList">
+      <!-- Cards akan di-generate oleh JavaScript -->
+  </div>
+
+<h1>Order Disini</h1>
+  <form id="dataForm">
+      <label for="yourname">Nama Kamu</label>
+      <input type="text" id="yourname" placeholder="Masukkan Nama Kamu" required 
+          oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" /><br>
+      </div>
+
+      <label for="email">Alamat Email</label>
+      <input type="text" id="email" placeholder="Masukkan Alamat Email Kamu" required />
+      <p id="warning" style="color: red; display: none;">Email harus menggunakan @gmail.com</p><br>
+    </div>
+
+      <label for="status">Status</label>
+    <select id="status" required>
+      <option value="">Pilih Pendidikan</option>
+      <option value="smp">Sekolah Menengah Pertama</option>
+      <option value="smk">Sekolah Menengah Kejuruan</option>
+      <option value="sma">Sekolah Menengah Atas</option>
+      <option value="kuliah">Kuliah</option>
+    </select><br>
+
+      <label for="menu">Pilihan Menu</label>
+    <select id="menu" required>
+      <option value="">Pilih Jasa</option>
+      <option value="powerpoint">Microsoft PowerPoint</option>
+      <option value="word">Microsoft Word</option>
+      <option value="excel">Microsoft Excel</option>
+      <option value="website">Website</option>
+      <option value="desain">Desain</option>
+      <option value="other">Tugas Lainnya</option>
+    </select><br>
+
+    <label>Pilih Metode Pembayaran</label>
+    <div class="payment-options-grid">
+    <div class="payment-option">
+      <input type="radio" id="contactDana" name="paymentMethod" value="dana" required />
+      <label for="contactDana">
+          <img src="../assets/dana.png" alt="Dana" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;" />
+          Dana
+      </label>
+    </div>
+    <div class="payment-option">
+      <input type="radio" id="contactGopay" name="paymentMethod" value="gopay" />
+      <label for="contactGopay">
+          <img src="../assets/gopay.png" alt="Dana" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;" />
+          Gopay
+      </label>
+    </div>
+    <div class="payment-option">
+      <input type="radio" id="contactOvo" name="paymentMethod" value="ovo" />
+      <label for="contactOvo">
+          <img src="../assets/ovo.jpg" alt="Dana" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;" />
+          Ovo
+      </label>
+    </div>
+    <div class="payment-option">
+      <input type="radio" id="contactSeabank" name="paymentMethod" value="seabank" />
+      <label for="contactSeabank">
+          <img src="../assets/seabank.png" alt="Dana" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;" />
+          Seabank
+      </label>
+    </div>
+  </div>
+
+      <label for="message">Pesan</label>
+      <textarea id="message" rows="4" placeholder="Masukkan Pesan Kepada Jokiku, Cth: Selamat siang saya mau memesan layanan Joki Website. "></textarea>
+
+      <button id="orderButton" class="btn" type="button" onclick="sendToWhatsApp()">Order</button>
+    </form>
+
+  <div id="popupAlert" class="popup-alert" style="display: none;">
+    <div class="popup-content">
+      <p>Silahkan Isi Terlebih Dahulu, Jangan Sampai Ada Yang Kosong!</p>
+      <button id="closePopup">OK</button>
+    </div>
+  </div>
+
+  <script src="../src/script.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script>
+      const contacts = [
+          { 
+              name: "Muhammad Saka Abi Pratama", 
+              role: "Open", 
+              image: "../assets/foto_saka.jpg", 
+              phone: "6289508310427", 
+              email: "saka.abipratama@gmail.com",
+              instagram: "https://www.instagram.com/mhdsakaap0709/",
+              facebook: "https://web.facebook.com/msaka.ap?locale=id_ID",
+              discord: "https://discord.com/users/870886331105021963",
+          },
+          { 
+              name: "Immanuel Yehezkiel Sulasmono", 
+              role: "Open", 
+              image: "../assets/kucing.jpeg", 
+              phone: "62895379875853", 
+              email: "immanuel24@gmail.com",
+              instagram: "https://www.instagram.com/s.imanuelyehezkiel/",
+              facebook: "",
+              discord: "https://discord.com/users/947103743613222932",
+          }
+      ];
+
+        let selectedContact = null;
+        let selectedPhone = null;
+        const container = document.getElementById("contactList");
+        const orderButton = document.getElementById("orderButton");
+        const emailInput = document.getElementById("email");
+        const warningMessage = document.getElementById("warning");
+
+        // Generate cards
+        contacts.forEach(contact => {
+            const card = document.createElement("div");
+            card.classList.add("card");
+            card.innerHTML = `
+                <!-- From Uiverse.io by Centered101 --> 
+                <div class="penjoki">
+                  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=${contact.email}">
+                  <button class="mail">
+                    <svg
+                      class="lucide lucide-mail"
+                      stroke-linejoin="round"
+                      stroke-linecap="round"
+                      stroke-width="2"
+                      stroke="currentColor"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      height="24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect rx="2" y="4" x="2" height="16" width="20"></rect>
+                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                    </svg>
+                  </button>
+                  </a>
+                  <div class="profile-pic">
+                    <img src="${contact.image || 'https://via.placeholder.com/100'}" alt="${contact.name}" class="avatar"/>
+                    </div>
+                  <div class="bottom">
+                    <div class="content">
+                      <span class="name">${contact.name}</span>
+                      <span class="about-me"
+                        >${contact.role}
+                      </span>
+                    </div>
+                    <div class="bottom-bottom">
+                      <div class="social-links-container">
+                        <a href="${contact.instagram}" target="_blank">
+                        <svg
+                          class="icon instagram"
+                          viewBox="0 0 16 15.999"
+                          height="15.999"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            transform="translate(6 598)"
+                            d="M6-582H-2a4,4,0,0,1-4-4v-8a4,4,0,0,1,4-4H6a4,4,0,0,1,4,4v8A4,4,0,0,1,6-582ZM2-594a4,4,0,0,0-4,4,4,4,0,0,0,4,4,4,4,0,0,0,4-4A4.005,4.005,0,0,0,2-594Zm4.5-2a1,1,0,0,0-1,1,1,1,0,0,0,1,1,1,1,0,0,0,1-1A1,1,0,0,0,6.5-596ZM2-587.5A2.5,2.5,0,0,1-.5-590,2.5,2.5,0,0,1,2-592.5,2.5,2.5,0,0,1,4.5-590,2.5,2.5,0,0,1,2-587.5Z"
+                            data-name="Subtraction 4"
+                            id="Subtraction_4"
+                          ></path>
+                        </svg>
+                        </a>
+                        <a href="${contact.facebook}" target="_blank">
+                        <svg class="icon facebook" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M279.14 288l14.22-92.66h-88.91V132.3c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S261.91 0 225.36 0c-73.1 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/>
+                        </svg>
+                        </a>
+                        
+                        <a href="${contact.discord}" target="_blank">
+                        <svg class="icon discord" viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M524.5 69.3a1.5 1.5 0 00-.76-.7A485.1 485.1 0 00417.5 32a1.8 1.8 0 00-1.92.91 337.5 337.5 0 00-14.9 30.6 447.3 447.3 0 00-134.3 0 309.2 309.2 0 00-15-30.6 1.9 1.9 0 00-1.92-.91 483.7 483.7 0 00-106.3 36.6 1.7 1.7 0 00-.79.68C2.4 183.2-10.5 294.3 4.1 404.2a2 2 0 00.76 1.31A488.4 488.4 0 00180.3 480a1.9 1.9 0 001.93-.91 348.2 348.2 0 0029.8-48.4 1.9 1.9 0 00-1.04-2.6c-24.7-9.3-48.3-21.5-70.8-36.3a1.9 1.9 0 01-.19-3.1c4.7-3.5 9.3-7.2 13.8-10.9a1.8 1.8 0 011.9-.26c148.4 67.7 308.4 67.7 454.2 0a1.8 1.8 0 011.9.23c4.5 3.7 9.1 7.4 13.8 10.9a1.9 1.9 0 01-.2 3.1c-22.5 14.8-46.1 27-70.8 36.3a1.9 1.9 0 00-1.04 2.6 309.3 309.3 0 0029.8 48.4 1.8 1.8 0 001.92.91 486.6 486.6 0 00175.4-74.5 1.9 1.9 0 00.76-1.31c15.5-110.2-26.6-221-113.6-334.9zM220.3 337.3c-26.7 0-48.5-24.6-48.5-55s21.4-55 48.5-55c27.3 0 48.5 24.6 48.5 55s-21.5 55-48.5 55zm199.3 0c-26.7 0-48.5-24.6-48.5-55s21.4-55 48.5-55c27.3 0 48.5 24.6 48.5 55s-21.5 55-48.5 55z"/>
+                        </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div> `;
+
+
+            card.addEventListener("click", () => {
+                document.querySelectorAll(".card").forEach(c => c.classList.remove("selected"));
+
+                if (selectedContact !== contact.name) {
+                    card.classList.add("selected");
+                    selectedContact = contact.name;
+                    selectedPhone = contact.phone;
+                    checkFormValidity();
+                } else {
+                    selectedContact = null;
+                    selectedPhone = null;
+                    checkFormValidity();
+                }
+            });
+
+            container.appendChild(card);
+        });
+
+        // Validasi email agar hanya menerima @gmail.com
+        emailInput.addEventListener("blur", checkFormValidity);
+        emailInput.addEventListener("input", checkFormValidity);
+
+        function checkFormValidity() {
+            const emailValue = emailInput.value;
+            const isValidEmail = emailValue.endsWith("@gmail.com");
+
+            if (emailValue === "" || isValidEmail) {
+                warningMessage.style.display = "none";
+            } else {
+                warningMessage.style.display = "block";
+            }
+
+            // Aktifkan tombol hanya jika semua input valid
+            if (document.getElementById('dataForm').checkValidity() && selectedContact && isValidEmail) {
+                orderButton.disabled = false;
+            } else {
+                orderButton.disabled = false;
+            }
+        }
+
+        function sendToWhatsApp() {
+            const form = document.getElementById('dataForm');
+
+            if (!form.checkValidity() || !selectedContact) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Harap pilih penjoki dan lengkapi semua data sebelum order!",
+                });
+                return;
+            }
+
+            const yourname = document.getElementById('yourname').value;
+            const email = document.getElementById('email').value;
+            const status = document.getElementById('status').value;
+            const menu = document.getElementById('menu').value;
+            const message = document.getElementById('message').value;
+
+            const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
+            const paymentValue = paymentMethod ? paymentMethod.value : 'Tidak dipilih';
+
+            const whatsappMessage = 
+                `Hallo Kak aku mau mesan layanan joki nih di Jokiku dengan format sebagai berikut:\n\n` +
+                `*=== Format Order Jokiku ===*\n\n` +
+                `Nama: ${yourname}\n\n` +
+                `Email: ${email}\n\n` +
+                `Status: ${status}\n\n` +
+                `Layanan Jasa: ${menu}\n\n` +
+                `Pesan: ${message}\n\n` +
+                `Metode Pembayaran: ${paymentValue}`;
+
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+
+                // Deteksi perangkat (mobile atau desktop)
+            const isMobile = /iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
+            const waURL = isMobile 
+            ? `https://wa.me/${selectedPhone}?text=${encodedMessage}`  // Untuk HP
+            : `https://web.whatsapp.com/send?phone=${selectedPhone}&text=${encodedMessage}`; // Untuk PC
+
+            Swal.fire({
+                icon: "success",
+                title: "Berhasil!",
+                text: "Pesanan Anda berhasil dibuat. Mengarahkan ke WhatsApp...",
+                showConfirmButton: false,
+                timer: 2000
+            }).then(() => {
+                form.reset();
+                selectedContact = null;
+                selectedPhone = null;
+                document.querySelectorAll(".card").forEach(c => c.classList.remove("selected"));
+                checkFormValidity();
+                window.location.href = waURL;
+            });
+        }
+  </script>
+
+      <footer class="container">
+        <div class="footer-container">
+          <div class="accordion">
+            <div class="footer-logo">
+                <img src="../assets/logojokiku.jpg" alt="Logo Jokiku" style="width: 100px;">
+            </div>
+            <p>
+              Jl. Pasar Inpres, Radio Dalam, Kec. Kby Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12140.
+            </p>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">INFORMASI</button>
+          <div class="accordion-content">
+            <a href="Index.html">Beranda</a>
+            <a href="Index.html#about">Tentang Kami</a>
+            <a href="Index.html#service">Layanan Kami</a>
+            <a href="Index.html#contact">Kontak</a>
+        </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">MEDIA SOSIAL</button>
+          <div class="accordion-content">
+            <a href="https://www.instagram.com/jokiiiku.id">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">Youtube</a>
+        </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">PERUSAHAAN</button>
+          <div class="accordion-content">
+          <a href="#">Partnership</a>
+          <a href="karir.html">Karir</a>
+          <a href="blog.html">Blog</a>
+      </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">BANTUAN</button>
+        <div class="accordion-content">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="tos.html">Terms Of Service</a>
+      </div>
+      </div>
+      </footer>
+
+      <div class="copyright">
+        © 2025 Jokiku – Menyediakan Layanan Joki Tugas Untuk Seluruh Indonesia Mulai Dari SMP, SMK, SMA Hingga Kuliah. 
+      </div>
+
+      <script>
+        document.querySelectorAll(".accordion-header").forEach(button => {
+        button.addEventListener("click", () => {
+            const content = button.nextElementSibling;
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        });
+      });
+      </script>
+
+      <script>
+        const themeToggler = document.getElementById('theme-toggler');
+        const body = document.body;
+        const header = document.querySelector('header');
+    
+        themeToggler.addEventListener('click', () => {
+          body.classList.toggle('dark-mode');
+          header.classList.toggle('dark-mode');
+          const icon = themeToggler.querySelector('i');
+    
+          // Toggle icon between sun and moon
+          if (body.classList.contains('dark-mode')) {
+            icon.classList.replace('bx-sun', 'bx-moon');
+          } else if (header.classList.contains('dark-mode')) {
+            icon.classList.replace('bx-sun', 'bx-moon');
+          } else {
+            icon.classList.replace('bx-moon', 'bx-sun');
+          }
+        });
+      </script>
+</body>
+</html>

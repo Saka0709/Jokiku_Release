@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="icon" type="image/jpg" href="../assets/logojokiku.jpg">
+    <title>Jokiku - Joki Tugas Terpercaya Di Indonesia</title>
+</head>
+<body>
+  <div class="wallpaper"></div>
+  <header>
+    <div class="logo" id="logo">
+        <img src="../assets/logojokiku2.png" target="_blank">Jokiku
+    </div>
+          <nav class="nav-links" id="nav-links">
+            <a href="Index.html" class="active">Beranda</a>
+            <a href="#about">Tentang Kami</a>
+            <a href="#service">Layanan Kami</a>
+            <a href="#contact">Kontak</a>
+            <div class="theme-switcher" id="theme-toggler">
+              <i class="bx bx-sun"></i>
+            </div>
+        </nav>
+
+        <button id="menuButton">
+          <i class='bx bx-menu'></i>
+      </button>
+  </header>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const menuButton = document.getElementById("menuButton");
+    const nav = document.querySelector(".nav-links");
+    const logo = document.querySelector(".logo");
+
+    if (menuButton && nav && logo) {
+      menuButton.addEventListener("click", function () {
+        nav.classList.toggle("open"); // Toggle menu
+        logo.classList.toggle("hidden"); // Toggle logo (hilang/muncul)
+      });
+    }
+  });
+  </script>
+
+  <div class="sticky-bar">
+    <div class="message">
+      Joki Tugas Disini akan Mendapatkan Promo!, Promo Berakhir:<span id="countdown"></span>
+    </div>
+  </div>
+  <script src="../src/sticky.js"></script>
+  <main>
+    <div>
+        <div class="text-content">
+          <h1>Jokiku</h1>
+          <h2>Joki Tugas Cepat dan Efisien.</h2>
+          <p class="typewriter">Melayani Joki tugas mulai dari SMP, SMA, dan Kuliah.</p>
+          <a href="order.html" class="btn">Order Jokiku
+          </a>
+        </div>
+      </div>
+      <div class="image-grid">
+        <div class="image-item"><img src="../assets/beranda.png" alt="Image 1">
+      </div>
+  </main>
+  <div class="cookie-card">
+    <span class="title">🍪 Cookie Notice</span>
+    <p class="description">Kami menggunakan cookie untuk memastikan bahwa kami memberi Anda pengalaman terbaik di situs web kami. <a href="privacy.html">Read cookies policies</a>. </p>
+    <div class="actions">
+        <button class="pref">
+        </button>
+        <button class="accept">
+            Terima
+        </button>
+    </div>
+</div>
+  <section class="about" id="about">
+    <h1>Tentang Kami</h1>
+    <p>Website Jokiku dibuat pada tahun 2025, Awalnya Jokiku dibuat karena Impian Pembuat untuk membuka Joki Tugas.
+      Jokiku telah hadir untuk membantu dan menyelesaikan tugas - tugas kamu yang banyak, tidak sempat mengerjakannya,
+      bingung cara mengerjakannya dan berbagai hal lainnya. Jokiku akan siap melayani kapanpun dan dimanapun kamu berada.
+    </p>
+  </section>
+
+  <section class="service" id="service">
+    <h2 class="heading">Layanan <span>Kami</span></h2>
+
+    <div class="service-container">
+        <div class="service-box">
+            <img src="../assets/powerpoint.jpg">
+            <div class="service-layer">
+                <h4>Microsoft PowerPoint</h4>
+                <p>Melayani Jasa Pembuatan PowerPoint.</p>
+                <a href="#"><i class='bx bx-link-external'></i></a>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <img src="../assets/word.jpg">
+            <div class="service-layer">
+                <h4>Microsoft Word</h4>
+                <p>Melayani Jasa Ketik Pada Microsoft Word, dan Lain - lain.</p>
+                <a href="#"><i class='bx bx-link-external'></i></a>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <img src="../assets/excel.jpg">
+            <div class="service-layer">
+                <h4>Microsoft Excel</h4>
+                <p>Melayani Jasa Pembuatan Seputar Microsoft Excel.</p>
+                <a href="#"><i class='bx bx-link-external'></i></a>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <img src="../assets/website.jpg">
+            <div class="service-layer">
+                <h4>Website</h4>
+                <p>Melayani Jasa Pembuatan Website</p>
+                <a href="#"><i class='bx bx-link-external'></i></a>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <img src="../assets/desain.jpg">
+            <div class="service-layer">
+                <h4>Desain</h4>
+                <p>Melayani Jasa Desain seperti Logo, Banner, Poster, dan Lain - lain.</p>
+                <a href="#"><i class='bx bx-link-external'></i></a>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <img src="../assets/tugaslainnya.jpg">
+            <div class="service-layer">
+                <h4>Tugas Lainnya</h4>
+                <p>Melayani Joki Tugas Lainnya Selain Yang Tadi Mulai dari Rp. 10000 Aja.</p>
+                <a href="#"><i class='bx bx-link-external'></i></a>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h1>Kontak</h1>
+      <p><i class="fa-solid fa-location-dot"></i> Jl. Pasar Inpres, Radio Dalam, Kec. Kby Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12140.</p>
+      <p><i class="fa-solid fa-envelope"></i> jokiku795@gmail.com</p>
+      <p><i class="fa-brands fa-instagram"></i> @jokiiiku.id</p>
+      <p><i class="fa-solid fa-clock"></i> Buka: 24 Jam</p>
+  </section>
+
+  <div class="faq-container">
+    <h1 class="tanya">Frequently asked questions</h1>
+
+    <div class="faq-item">
+        <div class="faq-question">
+          Bagaimana cara Order Joki Tugas di Jokiku?
+            <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Kalian klik button Tulisan "Order Jokiku" jika sudah, kalian akan diminta untuk mengisi Formulir.
+        </div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">
+          Jenis Metode Pembayarannya Ada Apa Saja?
+            <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Saat ini Jokiku hanya menerima Pembayaran melalui Seabank, Dana, Gopay dan Ovo saja.
+        </div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">
+          Joki Tugas Yang Lainnya Maksudnya Apa Ya?
+            <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Joki Tugas Selain Yang Ada dilayanan Kami diatas, seperti Pekerjaan Rumah (PR), Pemomgraman selain Website (C++, VB 6.0, Delphi 7),
+          Buat CV dan Lain - lain.
+        </div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">
+          Kira - Kira Waktu Pengerjaannya Berapa Hari?
+            <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Tergantung Kesulitan dan Antrian paling Lama bisa sampai 5 hari.
+        </div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">
+          Bagaimana Sistem Pembayaran Pada Jokiku?
+            <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Melakukan Pembayaran Terlebih dahulu, baru kami akan langsung mengerjakannya sesuai antrian ya.
+        </div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">
+          Untuk Menghubungi Admin Jokiku Bisa Melalui Apa Saja?
+            <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Untuk Menghubungi atau kontak dengan admin bisa melalui Via Whatsapp, Email, dan Instagram.
+        </div>
+    </div>
+</div>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(item => {
+        item.addEventListener("click", function () {
+            this.classList.toggle("active");
+
+            // Ubah ikon + jadi - ketika dibuka
+            let icon = this.querySelector(".icon");
+            icon.textContent = this.classList.contains("active") ? "−" : "+";
+        });
+    });
+});</script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const cookieCard = document.querySelector(".cookie-card");
+      const acceptBtn = document.querySelector(".accept");
+      const prefBtn = document.querySelector(".pref");
+  
+      // Fungsi untuk menyetel cookie
+      function setCookie(name, value, days) {
+        let expires = "";
+        if (days) {
+          let date = new Date();
+          date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+          expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + value + "; path=/" + expires;
+      }
+  
+      // Fungsi untuk mendapatkan cookie
+      function getCookie(name) {
+        let nameEQ = name + "=";
+        let ca = document.cookie.split(";");
+        for (let i = 0; i < ca.length; i++) {
+          let c = ca[i].trim();
+          if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+      }
+  
+      // Cek apakah pengguna sudah menerima cookies dari `cookie` atau `localStorage`
+      if (getCookie("cookiesAccepted") || localStorage.getItem("cookiesAccepted")) {
+        cookieCard.style.display = "none"; // Sembunyikan banner jika sudah disetujui
+      }
+  
+      // Event saat tombol "Accept" ditekan
+      acceptBtn.addEventListener("click", function () {
+        setCookie("cookiesAccepted", "true", 30); // Berlaku selama 30 hari
+        localStorage.setItem("cookiesAccepted", "true"); // Simpan di localStorage
+        cookieCard.style.display = "none"; // Sembunyikan banner
+      });
+  
+      // Event saat tombol "Manage your preferences" ditekan
+      if (prefBtn) {
+        prefBtn.addEventListener("click", function () {
+          alert("Here you can manage your cookie preferences (fitur bisa ditambahkan).");
+        });
+      }
+    });
+  </script>
+
+  <footer class="container">
+    <div class="footer-container">
+      <div class="accordion">
+        <div class="footer-logo">
+            <img src="../assets/logojokiku.jpg" alt="Logo Jokiku" style="width: 100px;">
+        </div>
+        <p>
+          Jl. Pasar Inpres, Radio Dalam, Kec. Kby Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12140.
+        </p>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-header">INFORMASI</button>
+      <div class="accordion-content">
+        <a href="Index.html">Beranda</a>
+        <a href="#about">Tentang Kami</a>
+        <a href="#service">Layanan Kami</a>
+        <a href="#contact">Kontak</a>
+    </div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-header">MEDIA SOSIAL</button>
+      <div class="accordion-content">
+        <a href="https://www.instagram.com/jokiiiku.id">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">Youtube</a>
+    </div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-header">PERUSAHAAN</button>
+      <div class="accordion-content">
+      <a href="#">Partnership</a>
+      <a href="karir.html">Karir</a>
+      <a href="blog.html">Blog</a>
+  </div>
+  </div>
+  <div class="accordion-item">
+    <button class="accordion-header">BANTUAN</button>
+    <div class="accordion-content">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="tos.html">Terms Of Service</a>
+</div>
+</div>
+  </footer>
+
+  <div class="copyright">
+    © 2025 Jokiku – Menyediakan Layanan Joki Tugas Untuk Seluruh Indonesia Mulai Dari SMP, SMK, SMA Hingga Kuliah. 
+  </div>
+
+  <script>
+    document.querySelectorAll(".accordion-header").forEach(button => {
+    button.addEventListener("click", () => {
+        const content = button.nextElementSibling;
+        content.style.display = content.style.display === "block" ? "none" : "block";
+    });
+});
+  </script>
+
+  <script src="../src/script.js"></script>
+
+  <script>
+    const themeToggler = document.getElementById('theme-toggler');
+    const body = document.body;
+    const header = document.querySelector('header');
+
+    themeToggler.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      header.classList.toggle('dark-mode');
+      const icon = themeToggler.querySelector('i');
+
+      // Toggle icon between sun and moon
+      if (body.classList.contains('dark-mode')) {
+        icon.classList.replace('bx-sun', 'bx-moon');
+      } else if (header.classList.contains('dark-mode')) {
+        icon.classList.replace('bx-sun', 'bx-moon');
+      } else {
+        icon.classList.replace('bx-moon', 'bx-sun');
+      }
+    });
+  </script>
+</body>
+</html>

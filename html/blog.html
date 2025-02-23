@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/blog.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/jpg" href="../assets/logojokiku.jpg">
+    <title>Blog - Jokiku</title>
+</head>
+<body>
+    <header>
+    <div class="logo">
+        <img src="../assets/logojokiku2.png" target="_blank">Jokiku
+    </div>
+          <nav class="nav-links" id="nav-links">
+            <a href="Index.html" class="active">Beranda</a>
+            <a href="Index.html#about">Tentang Kami</a>
+            <a href="Index.html#service">Layanan Kami</a>
+            <a href="Index.html#contact">Kontak</a>
+            <div class="theme-switcher" id="theme-toggler">
+              <i class="bx bx-sun"></i>
+            </div>
+          </nav>
+          
+            <button id="menuButton">
+              <i class='bx bx-menu'></i>
+          </button>
+      </header>
+    
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const menuButton = document.getElementById("menuButton");
+        const nav = document.querySelector(".nav-links");
+        const logo = document.querySelector(".logo");
+    
+        if (menuButton && nav && logo) {
+          menuButton.addEventListener("click", function () {
+            nav.classList.toggle("open"); // Toggle menu
+            logo.classList.toggle("hidden"); // Toggle logo (hilang/muncul)
+          });
+        }
+      });
+      </script>
+
+    <!-- Blog Section -->
+    <section class="py-20 bg-white mt-10">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <span class="text-lg font-semibold text-green-600">Blog Kami</span>
+                <h2 class="text-4xl font-bold text-gray-900 mt-2">Berita Terkini</h2>
+                <p class="text-gray-500 mt-3">
+                    Membagikan Informasi seputar Pendidikan dan Teknologi mulai dari Nasional hingga Internasional.
+                </p>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="grid md:grid-cols-3 gap-8 mt-12">
+                <!-- Blog Card 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="../assets/blog1.jpg" alt="Blog Image" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <span class="bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded">Jan 29, 2025</span>
+                        <h3 class="text-xl font-semibold text-gray-900 mt-3">
+                            Mengenal DeepSeek AI yang akan menyaingi ChatGPT
+                        </h3>
+                        <p class="text-gray-600 mt-2">
+                            Di tengah persaingan teknologi kecerdasan buatan yang semakin ketat, banyak yang bertanya-tanya apa itu DeepSeek AI dan mengapa perusahaan ini begitu fenomenal. 
+                            DeepSeek AI merupakan perusahaan teknologi asal China yang berhasil menciptakan model bahasa besar (LLM) dengan kemampuan setara ChatGPT namun 
+                            dengan biaya pengembangan yang jauh lebih rendah. Kehadiran DeepSeek AI telah mengejutkan dunia teknologi dan mengubah persepsi tentang pengembangan AI.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Blog Card 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="../assets/blog2.jpg" alt="Blog Image" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <span class="bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded">Jan 29, 2025</span>
+                        <h3 class="text-xl font-semibold text-gray-900 mt-3">
+                            Tailwind CSS 4.0 Generasi terbaru yang Menghadirkan peningkatan kinerja dan fleksibilitas dalam pengembangan antarmuka web
+                        </h3>
+                        <p class="text-gray-600 mt-2">
+                            Pada tahun ini TailwindCSS Baru saja merilis sebuah Desain antarmuka Web yang bernama tailwindcss v4.0 alpha, 
+                            Fitur Utama yang mencakup TailwindCSS V4.0 ialah:<br>
+                            1. Menghasilkan Kinerja atau performa yang lebih Baik dalam mengintegrasikan sebuah antarmuka Web.<br>
+                            2. Dapat mendeteksi template semua file tanpa harus mengkonfigurasinya secara manual.<br>
+                            3. Memperluas jangkauan Framework dan dapat digunakan langsung di CSS tanpa harus menggantikan file konfigurasi Javascript.
+                        </p>
+                    </div>
+                </div>
+                <!-- Blog Card 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                  <img src="../assets/windows12.jpg" alt="Blog Image" class="w-full h-60 object-cover">
+                  <div class="p-6">
+                      <span class="bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded">Feb 23, 2025</span>
+                      <h3 class="text-xl font-semibold text-gray-900 mt-3">
+                          Microsoft meluncurkan OS Terbaru Windows 12 
+                      </h3>
+                      <p class="text-gray-600 mt-2">
+                        Hingga Februari 2025, Microsoft belum secara resmi mengumumkan Windows 12. Namun, berbagai laporan 
+                        dan spekulasi menunjukkan bahwa perusahaan ini tengah mengembangkan versi terbaru dari sistem operasi Windows.
+                        Awalnya, banyak yang memperkirakan Windows 12 akan dirilis pada akhir 2024 atau awal 2025, mengikuti siklus 
+                        pembaruan tiga tahunan Microsoft. Namun, pada CES 2025, Microsoft menyatakan bahwa tahun 2025 akan menjadi 
+                        "tahun penyegaran Windows 11", yang mengindikasikan bahwa peluncuran Windows 12 mungkin ditunda hingga 2027.
+                      </p>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="container">
+      <div class="footer-container">
+        <div class="accordion">
+          <div class="footer-logo">
+              <img src="../assets/logojokiku.jpg" alt="Logo Jokiku" style="width: 100px;">
+          </div>
+          <p>
+            Jl. Pasar Inpres, Radio Dalam, Kec. Kby Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12140.
+          </p>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">INFORMASI</button>
+        <div class="accordion-content">
+          <a href="Index.html">Beranda</a>
+          <a href="Index.html#about">Tentang Kami</a>
+          <a href="Index.html#service">Layanan Kami</a>
+          <a href="Index.html#contact">Kontak</a>
+      </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">MEDIA SOSIAL</button>
+        <div class="accordion-content">
+          <a href="https://www.instagram.com/jokiiiku.id">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">Youtube</a>
+      </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">PERUSAHAAN</button>
+        <div class="accordion-content">
+        <a href="#">Partnership</a>
+        <a href="karir.html">Karir</a>
+        <a href="blog.html">Blog</a>
+    </div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-header">BANTUAN</button>
+      <div class="accordion-content">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="tos.html">Terms Of Service</a>
+  </div>
+  </div>
+    </footer>
+  
+    <div class="copyright">
+      © 2025 Jokiku – Menyediakan Layanan Joki Tugas Untuk Seluruh Indonesia Mulai Dari SMP, SMK, SMA Hingga Kuliah. 
+    </div>
+  
+    <script>
+      document.querySelectorAll(".accordion-header").forEach(button => {
+      button.addEventListener("click", () => {
+          const content = button.nextElementSibling;
+          content.style.display = content.style.display === "block" ? "none" : "block";
+      });
+  });
+    </script>   
+
+  <script>
+    const themeToggler = document.getElementById('theme-toggler');
+    const body = document.body;
+    const header = document.querySelector('header');
+
+    themeToggler.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      header.classList.toggle('dark-mode');
+      const icon = themeToggler.querySelector('i');
+
+      // Toggle icon between sun and moon
+      if (body.classList.contains('dark-mode')) {
+        icon.classList.replace('bx-sun', 'bx-moon');
+      } else if (header.classList.contains('dark-mode')) {
+        icon.classList.replace('bx-sun', 'bx-moon');
+      } else {
+        icon.classList.replace('bx-moon', 'bx-sun');
+      }
+    });
+  </script>
+
+</body>
+</html>

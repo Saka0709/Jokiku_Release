@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/karir.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="icon" type="image/jpg" href="../assets/logojokiku.jpg">
+    <title>Karir - Jokiku</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../assets/logojokiku2.png" target="_blank">Jokiku
+        </div>
+            <nav class="nav-links" id="nav-links">
+                <a href="Index.html" class="active">Beranda</a>
+                <a href="index.html#about">Tentang Kami</a>
+                <a href="index.html#service">Layanan Kami</a>
+                <a href="index.html#contact">Kontak</a>
+                <div class="theme-switcher" id="theme-toggler">
+                    <i class="bx bx-sun"></i>
+                </div>
+              </nav>
+
+                <button id="menuButton">
+                  <i class='bx bx-menu'></i>
+              </button>
+          </header>
+        
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+            const menuButton = document.getElementById("menuButton");
+            const nav = document.querySelector(".nav-links");
+            const logo = document.querySelector(".logo");
+        
+            if (menuButton && nav && logo) {
+              menuButton.addEventListener("click", function () {
+                nav.classList.toggle("open"); // Toggle menu
+                logo.classList.toggle("hidden"); // Toggle logo (hilang/muncul)
+              });
+            }
+          });
+          </script>
+
+    <section class="container" id="container">
+            <div class="karir">
+                <h1>Mulailah Perjalanan Anda dengan Jokiku</h1>
+                <p>Karir Anda lebih dari sekedar deskripsi pekerjaan.</p>
+                <p>Kesuksesan kami dibangun atas dasar kerja tim, prinsip-prinsip kami, dan tantangan dalam mengejar pertumbuhan individu dan kolektif, semuanya didorong oleh inspirasi yang berlimpah.</p>
+                <p>Jika ini terdengar seperti tempat di mana Anda akan berkembang, bergabunglah dengan tim kami dan bantu kami mewujudkan kesuksesan online bagi semua orang.</p>
+                <button class="join-btn" onclick="scrollToDaftar()">Segera Bergabung</button>
+            </div>
+
+            <div class="image-grid">
+                <div class="image-item"><img src="../assets/karir1.png" alt="Image 1"></div>
+                <div class="image-item"><img src="../assets/karir2.png" alt="Image 2"></div>
+                <div class="image-item"><img src="../assets/karir3.png" alt="Image 3"></div>
+                <div class="image-item"><img src="../assets/karir4.png" alt="Image 4"></div>
+            </div>
+    </section>
+
+    <div id="daftar" class="daftar">
+      <h1>Bangun karir Anda bersama kami</h1>
+      <p>
+        Lihat peluang kami saat ini. Dari pekerjaan jarak jauh hingga posisi di kantor kami atau gabungan keduanya, kami menawarkan banyak manfaat yang mendorong kehidupan seimbang dan membantu Anda membuka potensi Anda.
+      </p>
+      <div class="job-section">
+        <div class="job-category">
+          <button class="toggle-button" onclick="toggleDetails('website')">
+            <span>Website Developer</span>
+            <span>0 positions available</span>
+          </button>
+          <div id="website" class="job-details">
+            <p>Coming Soon.</p>
+            <!-- <button class="view-details">View details</button> -->
+          </div>
+        </div>
+  
+        <div class="job-category">
+          <button class="toggle-button" onclick="toggleDetails('desain')">
+            <span>Desainer</span>
+            <span>0 positions available</span>
+          </button>
+          <div id="desain" class="job-details">
+            <p>Coming Soon.</p>
+            <!-- <button class="view-details">View details</button> -->
+          </div>
+        </div>
+  
+        <div class="job-category">
+          <button class="toggle-button" onclick="toggleDetails('microsoft')">
+            <span>Microsoft Office</span>
+            <span>0 positions available</span>
+          </button>
+          <div id="microsoft" class="job-details">
+            <p>Coming Soon.</p>
+            <!-- <button class="view-details">View details</button> -->
+          </div>
+        </div>
+
+        <div class="job-category">
+          <button class="toggle-button" onclick="toggleDetails('joki')">
+            <span>Umum</span>
+            <span>0 positions available</span>
+          </button>
+          <div id="joki" class="job-details">
+            <p>Coming Soon.</p>
+            <!-- <button class="view-details">View details</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="container">
+      <div class="footer-container">
+        <div class="accordion">
+          <div class="footer-logo">
+              <img src="../assets/logojokiku.jpg" alt="Logo Jokiku" style="width: 100px;">
+          </div>
+          <p>
+            Jl. Pasar Inpres, Radio Dalam, Kec. Kby Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12140.
+          </p>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">INFORMASI</button>
+        <div class="accordion-content">
+          <a href="Index.html">Beranda</a>
+          <a href="Index.html#about">Tentang Kami</a>
+          <a href="Index.html#service">Layanan Kami</a>
+          <a href="Index.html#contact">Kontak</a>
+      </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">MEDIA SOSIAL</button>
+        <div class="accordion-content">
+          <a href="https://www.instagram.com/jokiiiku.id">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">Youtube</a>
+      </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">PERUSAHAAN</button>
+        <div class="accordion-content">
+        <a href="#">Partnership</a>
+        <a href="karir.html">Karir</a>
+        <a href="blog.html">Blog</a>
+    </div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-header">BANTUAN</button>
+      <div class="accordion-content">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="tos.html">Terms Of Service</a>
+  </div>
+  </div>
+    </footer>
+  
+    <div class="copyright">
+      © 2025 Jokiku – Menyediakan Layanan Joki Tugas Untuk Seluruh Indonesia Mulai Dari SMP, SMK, SMA Hingga Kuliah. 
+    </div>
+  
+    <script>
+      document.querySelectorAll(".accordion-header").forEach(button => {
+      button.addEventListener("click", () => {
+          const content = button.nextElementSibling;
+          content.style.display = content.style.display === "block" ? "none" : "block";
+      });
+  });
+    </script>    
+
+      <script src="../src/karir.js"></script>
+
+      <script>
+        function scrollToDaftar() {
+          const element = document.getElementById('daftar');
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      </script>
+  
+      <script>
+        const themeToggler = document.getElementById('theme-toggler');
+        const body = document.body;
+        const header = document.querySelector('header');
+    
+        themeToggler.addEventListener('click', () => {
+          body.classList.toggle('dark-mode');
+          header.classList.toggle('dark-mode');
+          const icon = themeToggler.querySelector('i');
+    
+          // Toggle icon between sun and moon
+          if (body.classList.contains('dark-mode')) {
+            icon.classList.replace('bx-sun', 'bx-moon');
+          } else if (header.classList.contains('dark-mode')) {
+            icon.classList.replace('bx-sun', 'bx-moon');
+          } else {
+            icon.classList.replace('bx-moon', 'bx-sun');
+          }
+        });
+      </script>
+</body>
+</html>
